@@ -16,7 +16,7 @@ const menu = [
         "item_cat": "drinks",
         "item_name": "Cafe Latte",
         "item_price": 49,
-        "item_image": cafeLatte
+        "item_image": cafeLatte,
     },
     {
         "item_id": "002",

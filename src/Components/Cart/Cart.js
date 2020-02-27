@@ -3,8 +3,9 @@ import './Cart.css';
 
 class Cart extends Component {
     handleClick = () => {
-
+        this.props.removeItem(this.props.id);
     }
+
     render() {
         return (
             <div className='Cart' key={this.props.id}>

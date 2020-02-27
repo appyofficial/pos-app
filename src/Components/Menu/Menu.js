@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import uuid from 'uuid/v4';
 import Cart from '../Cart/Cart';
 import ItemCard from '../ItemCard/ItemCard';
 import './Menu.css';
@@ -59,7 +60,14 @@ class Menu extends Component {
 
     //adding item to cart
     addToCart = (name, price, image, id) => {
-        this.setState(st => ({ itemsInCart: [...st.itemsInCart, { name: name, price: price, image: image, id: id }] }))
+        this.setState(st => ({ itemsInCart: [...st.itemsInCart, { name: name, price: price, image: image, id: uuid() }] }))
+    }
+
+    //remove Item
+    removeItem = (id) => {
+        let updated = [...this.state.itemsInCart];
+        let result = updated.filter(item => item.id !== id);
+        this.setState({ itemsInCart: result });
     }
 
     //total price
@@ -74,10 +82,19 @@ class Menu extends Component {
         this.setState({ itemsInCart: [] });
     }
 
+    //checkout
+    checkOut = () => {
+        return (
+            <div className='checkout'>
+                {this.totalPrice()}
+            </div>
+        )
+    }
+
     render() {
         let displayMenu = menu.map(item => <ItemCard id={item.item_id} itemName={item.item_name} itemPrice={item.item_price} img={item.item_image} addToCart={this.addToCart} />);
 
-        let displayCart = this.state.itemsInCart.map(item => <Cart name={item.name} price={item.price} image={item.image} id={item.id} />);
+        let displayCart = this.state.itemsInCart.map(item => <Cart name={item.name} price={item.price} image={item.image} id={item.id} removeItem={this.removeItem} />);
 
 
 
@@ -107,7 +124,7 @@ class Menu extends Component {
                             <span>Total</span><span> {this.totalPrice()} SEK</span>
                         </div>
                         <div className='cart-box-pay'>
-                            <button className='checkout-btn'>Checkout</button>
+                            <button className='checkout-btn' onClick={this.checkOut}>Checkout</button>
                             <button className='cancel-btn' onClick={this.cancelOrder}>Cancel</button>
                         </div>
                     </div>

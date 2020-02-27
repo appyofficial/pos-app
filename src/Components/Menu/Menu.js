@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, NavLink } from 'react-router';
 import uuid from 'uuid/v4';
 import Cart from '../Cart/Cart';
 import ItemCard from '../ItemCard/ItemCard';
@@ -9,6 +10,7 @@ import machiatto from './../../Data/images/machiatto.png';
 import espresso from './../../Data/images/espresso.png';
 import blackCoffee from './../../Data/images/blackcoffee.png';
 import emptyCart from './../../Data/images/emptycart.png';
+import allicon from './../../Data/icons/all.png'
 
 const menu = [
     {
@@ -101,7 +103,15 @@ class Menu extends Component {
         return (
             <div className='Control'>
                 <div className='menu-ct'>
-                    <div className='menu-header'> Food Menu</div>
+                    <div className='menu-header'>
+                        <p>Food Menu</p>
+                        <div>
+                            <NavLink>
+                                <img src={allicon} alt='all' />
+                                <span>All</span>
+                            </NavLink>
+                        </div>
+                    </div>
                     <div className='Menu'>
                         {displayMenu}
                     </div>

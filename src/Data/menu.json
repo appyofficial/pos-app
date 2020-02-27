@@ -1,0 +1,39 @@
+{
+    "menu": [
+        {
+            "item_id": "001",
+            "item_cat": "drinks",
+            "item_name": "Cafe Latte",
+            "item_price": "49",
+            "item_image": ""
+        },
+        {
+            "item_id": "002",
+            "item_cat": "drinks",
+            "item_name": "Chai Latte",
+            "item_price": "39",
+            "item_image": ""
+        },
+        {
+            "item_id": "003",
+            "item_cat": "drinks",
+            "item_name": "Macchiato",
+            "item_price": "55",
+            "item_image": ""
+        },
+        {
+            "item_id": "004",
+            "item_cat": "drinks",
+            "item_name": "Espresso",
+            "item_price": "25",
+            "item_image": ""
+        },
+        {
+            "item_id": "005",
+            "item_cat": "drinks",
+            "item_name": "Black Coffee",
+            "item_price": "39",
+            "item_image": ""
+        }
+    ]
+}

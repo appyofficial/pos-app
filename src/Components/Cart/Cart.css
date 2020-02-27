@@ -1,0 +1,58 @@
+.Cart {
+    background-color: white;
+    padding: 10px 18px;
+    width: 90%;
+    margin: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-radius: 10px;
+    position: relative;
+}
+
+.cart-img {
+    height: 100%;
+    max-width: 100px;
+    width: 100%;
+    margin-right: 18px;
+}
+
+.cart-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.cart-detail h3:before {
+    content: "";
+    display: block;
+    background: url("veg.png") no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    float: left;
+    margin: 0 5px 0 0;
+}
+
+.empty-cart {
+    margin: auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.cart-removeBtn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    background-color: rgb(197, 0, 0);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    font-weight: bold;
+}

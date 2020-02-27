@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Link, NavLink } from 'react-router';
 import uuid from 'uuid/v4';
 import Cart from '../Cart/Cart';
+import MenuHeader from './MenuHeader';
 import ItemCard from '../ItemCard/ItemCard';
 import './Menu.css';
 import cafeLatte from './../../Data/images/caffelatte.png';
@@ -10,12 +10,13 @@ import machiatto from './../../Data/images/machiatto.png';
 import espresso from './../../Data/images/espresso.png';
 import blackCoffee from './../../Data/images/blackcoffee.png';
 import emptyCart from './../../Data/images/emptycart.png';
-import allicon from './../../Data/icons/all.png'
+
+
 
 const menu = [
     {
         "item_id": "001",
-        "item_cat": "drinks",
+        "item_cat": "meal",
         "item_name": "Cafe Latte",
         "item_price": 49,
         "item_image": cafeLatte,
@@ -56,6 +57,7 @@ class Menu extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            menu: menu,
             itemsInCart: []
         }
     }
@@ -93,8 +95,17 @@ class Menu extends Component {
         )
     }
 
+    //filter food
+    filterFood = (category) => {
+
+
+        let displayMenu = this.state.menu.map(item => <ItemCard id={item.item_id} itemName={item.item_name} itemPrice={item.item_price} img={item.item_image} addToCart={this.addToCart} />);
+        return displayMenu;
+
+    }
+
+
     render() {
-        let displayMenu = menu.map(item => <ItemCard id={item.item_id} itemName={item.item_name} itemPrice={item.item_price} img={item.item_image} addToCart={this.addToCart} />);
 
         let displayCart = this.state.itemsInCart.map(item => <Cart name={item.name} price={item.price} image={item.image} id={item.id} removeItem={this.removeItem} />);
 
@@ -103,17 +114,9 @@ class Menu extends Component {
         return (
             <div className='Control'>
                 <div className='menu-ct'>
-                    <div className='menu-header'>
-                        <p>Food Menu</p>
-                        <div>
-                            <NavLink>
-                                <img src={allicon} alt='all' />
-                                <span>All</span>
-                            </NavLink>
-                        </div>
-                    </div>
+                    <MenuHeader filterFood={this.filterFood} />
                     <div className='Menu'>
-                        {displayMenu}
+                        {this.filterFood()}
                     </div>
                 </div>
                 <div className='cart-box'>

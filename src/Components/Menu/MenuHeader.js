@@ -9,6 +9,7 @@ export default class MenuHeader extends React.Component {
     handleClick = (e) => {
         let cat = e.target.getAttribute('data-catname') || e.target.parentElement.getAttribute('data-catname');
         this.props.filterFood(cat);
+        console.log(cat);
     }
 
     render() {
@@ -21,7 +22,7 @@ export default class MenuHeader extends React.Component {
                         <span>All</span>
                     </button>
                     <button className='filterBtn' onClick={this.handleClick} data-catname='burger'>
-                        <img src={burgerIcon} alt='burgers' />
+                        <img src={burgerIcon} alt='burger' />
                         <span>Burgers</span>
                     </button>
                     <button className='filterBtn' onClick={this.handleClick} data-catname='pizza'>
@@ -29,11 +30,11 @@ export default class MenuHeader extends React.Component {
                         <span>Pizza</span>
                     </button>
                     <button className='filterBtn' onClick={this.handleClick} data-catname='meal'>
-                        <img src={mealIcon} alt='meals' />
+                        <img src={mealIcon} alt='meal' />
                         <span>Meals</span>
                     </button>
                     <button className='filterBtn' onClick={this.handleClick} data-catname='drink'>
-                        <img src={drinksIcon} alt='drinks' />
+                        <img src={drinksIcon} alt='drink' />
                         <span>Drinks</span>
                     </button>
                 </div>

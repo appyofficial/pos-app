@@ -4,8 +4,6 @@
     width: calc(100% - 400px);
 }
 
-
-
 .Menu {
     flex: 1;
     display: inline-flex;
@@ -152,12 +150,4 @@
 
 .filterBtn span {
     display: block;
-}
-
-.checkout {
-    background-color: palegreen;
-    position: absolute;
-    width: 100vw;
-    height: 100vw;
-
 }

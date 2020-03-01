@@ -65,17 +65,20 @@
     justify-content: center;
     align-items: center;
     min-height: 70px;
-    background-color: white;
+    background-color: #fbfbfb;
     padding-top: 20px;
 }
 
 .cart-box-total-amount {
-    background-color: rgb(219, 219, 219);
-    color: darkblue;
+    background-color: white;
+    color: blueviolet;
     font-weight: bold;
     width: 80%;
     text-align: center;
     padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .cart-box-pay {

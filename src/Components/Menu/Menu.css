@@ -94,6 +94,10 @@
     height: 50px;
     font-size: 16px;
     font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .cancel-btn {

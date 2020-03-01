@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import uuid from 'uuid/v4';
 import Cart from '../Cart/Cart';
 import MenuHeader from './MenuHeader';
@@ -137,8 +138,8 @@ class Menu extends Component {
                             <span>Total</span><span> {this.totalPrice()} SEK</span>
                         </div>
                         <div className='cart-box-pay'>
-                            <button className='checkout-btn' onClick={this.checkOut}>Checkout</button>
-                            <button className='cancel-btn' onClick={this.cancelOrder}>Cancel</button>
+                            <Link to='/checkout' className='checkout-btn' onClick={this.checkOut}>Checkout</Link>
+                            <Link to='/' className='cancel-btn' onClick={this.cancelOrder}>Cancel</Link>
                         </div>
                     </div>
                 </div>

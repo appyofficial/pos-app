@@ -6,7 +6,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    border-radius: 10px;
+    border-radius: 1px;
     position: relative;
 }
 
@@ -20,18 +20,7 @@
 .cart-img img {
     width: 100%;
     height: auto;
-    border-radius: 10px;
-}
-
-.cart-detail h3:before {
-    content: "";
-    display: block;
-    background: url("veg.png") no-repeat;
-    background-size: contain;
-    width: 20px;
-    height: 20px;
-    float: left;
-    margin: 0 5px 0 0;
+    border-radius: 1px;
 }
 
 .empty-cart {
@@ -50,10 +39,46 @@
     right: 0;
     margin-bottom: 10px;
     margin-right: 10px;
-    background-color: rgb(197, 0, 0);
+    background-color: rgb(255, 103, 103);
     border: none;
     padding: 5px 10px;
     color: white;
     font-weight: bold;
     cursor: pointer;
+}
+
+
+
+/**
+ * ----------------------------------------
+ * animation slide-right
+ * ----------------------------------------
+ */
+.slide-right {
+    -webkit-animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-right 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@-webkit-keyframes slide-right {
+    0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-right {
+    0% {
+        -webkit-transform: translateX(-100px);
+        transform: translateX(-100px);
+    }
+
+    100% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
 }

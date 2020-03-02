@@ -26,8 +26,8 @@ export default class Checkout extends Component {
                         <div className='checkout-bill'><span>Total:</span> <span>{this.totalBill()} SEK</span></div>
                     </div>
                     <div className='checkout-btns-container'>
-                        <button onClick={this.handleGoBack}>Go Back</button>
-                        <button>Pay</button>
+                        <button className='gobackBtn' onClick={this.handleGoBack}>Go Back</button>
+                        <button className='confirmAndPayBtn'>Confirm & Pay</button>
                     </div>
                 </div>
             </div>

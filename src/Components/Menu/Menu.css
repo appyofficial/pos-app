@@ -4,6 +4,12 @@
     width: calc(100% - 400px);
 }
 
+.flxCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .Menu {
     flex: 1;
     display: inline-flex;
@@ -89,6 +95,7 @@
     align-items: center;
 }
 
+.btn,
 .checkout-btn,
 .cancel-btn {
     width: 140px;
@@ -101,16 +108,28 @@
     align-items: center;
 }
 
+.btn span {
+    margin-right: 10px;
+    font-size: 27px;
+}
+
 .cancel-btn {
     background-color: rgb(197, 0, 0);
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .checkout-btn {
     background-color: green;
     color: white;
     border: none;
+    cursor: pointer;
+}
+
+.checkout-btn:disabled {
+    color: silver;
+    background-color: whitesmoke;
 }
 
 /*menu header*/
@@ -127,6 +146,10 @@
     position: sticky;
     top: 0;
     right: 0;
+}
+
+.menu-ct {
+    width: 100%;
 }
 
 .menu-header-nav {
@@ -153,4 +176,70 @@
 
 .filterBtn span {
     display: block;
+}
+
+/*cancel confirm*/
+.cancel-confirm {
+    width: 100vw;
+    max-height: 100vh;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.774);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.cc-container {
+    background-color: white;
+    padding: 60px 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cc-btns {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 40px;
+}
+
+/*Anima*/
+.scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-up-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+
+@keyframes scale-up-center {
+    0% {
+        -webkit-transform: scale(0.5);
+        transform: scale(0.5);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
 }

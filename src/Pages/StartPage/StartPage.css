@@ -1,19 +1,36 @@
 .startpage {
     width: 100vw;
     height: 100vh;
-    background-color: palegreen;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
 }
 
 .startpage-container {
+    position: relative;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
-    text-align: center;
+    margin: 10px;
+    height: 100%;
+}
+
+.startpage-content h1 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    color: rgb(31, 0, 53);
+}
+
+.startpage-content p {
+    font-size: 22px;
+    line-height: 30px;
+    color: rgb(53, 53, 53);
 }
 
 .startpage-img {
@@ -30,14 +47,47 @@
 }
 
 .startpage-btns {
-    margin-top: 30px;
+    margin-top: 40px;
     width: 100%;
     text-align: center;
+    display: flex;
 }
 
 .startpage-btns .startBtn {
+    background: rgb(0, 163, 0);
+    margin-top: 30px;
     display: block;
-    padding: 10px;
-    background-color: white;
-    margin: 15px;
+    padding: 12px 38px;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    text-transform: capitalize;
+}
+
+.startBtn img {
+    width: 45px;
+    padding-right: 10px;
+}
+
+.startup-image {
+    width: 50%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+/*made by*/
+.madeBy {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    color: rgb(170, 170, 170);
+    font-size: 12px;
 }
